@@ -40,4 +40,6 @@ A utilização na prática do grid e sua responsividade.
   <img  src="image/Studio Ghibli.png">
 </p>
 
+### Link do projeto:
+https://victorcesilva.github.io/Ghibli-Studio/
 
