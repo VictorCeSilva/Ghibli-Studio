@@ -1,0 +1,282 @@
+/*Variáveis*/
+:root {
+  --green: #1A4855;
+  --green2: #628E75;
+
+  --white: #F9F9F9;
+}
+
+@font-face {
+  font-family: Poppins-bold;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: Poppins-black;
+  src: url(../fonts/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: Poppins-regular;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Poppins-semi;
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
+
+/*Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  background: rgb(98, 142, 117);
+  background: linear-gradient(172deg, rgba(98, 142, 117, 1) 0%, rgba(26, 72, 85, 1) 80%);
+  background-repeat: no-repeat;
+
+
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+}
+
+button,
+input {
+  border: 0;
+}
+
+button:focus,
+input:focus {
+  border: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 5em;
+  padding-top: 10px;
+}
+
+.logo img {
+  width: 12.25rem;
+  height: 6rem;
+}
+
+.list-social {
+  display: flex;
+  gap: 25px;
+  cursor: pointer;
+}
+
+.list-social ul li {
+  list-style-type: none;
+  
+
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "image"
+    "interact";
+}
+
+.anime-image {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:70% ;
+  max-height: 100%;
+  /* background-color: rgba(255, 0, 0, 0.438); */
+}
+
+.interact {
+  grid-area: interact;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-height: 100%;
+  /* background-color: rgba(0, 255, 255, 0.438); */
+}
+
+.anime-image img {
+  width: 70%;
+  position: relative;
+  animation:pulsando 10s infinite ;
+}
+
+
+@keyframes pulsando {
+  0%   {top:25px; opacity: 10%; }
+  10%   {top:0px; opacity: 25%; }
+  25%  {top:25px; opacity: 45%;}
+  50%  {top:0px; opacity: 70%;}
+  75%  {top:25px; opacity: 95%;}
+  100% {top:0px; opacity: 100%;}
+
+
+}
+
+.description {
+  max-width: 700px;
+  height: auto;
+}
+
+.name {
+  max-height: 200px;
+  font: normal clamp(1rem, 1.5rem, 5rem) 'Poppins-Regular';
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.name #title {
+  font: normal clamp(4rem, 4.5rem, 7rem) 'Poppins-black';
+  letter-spacing: 2px;
+  line-height: 45px;
+  margin: 5px 0px 20px 0px;
+}
+
+.summary {
+  font: normal 1rem 'Poppins-regular';
+  color: var(--white);
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+  justify-content: start;
+  margin-top: 25px;
+  padding-left: 10px;
+  gap: 15px;
+  height: auto;
+
+}
+
+.play {
+  display: flex;
+  position: relative;
+}
+
+
+:is(.play, .trailer) {
+  transform: skew(-24deg);
+  padding: 10px 40px;
+  background-color: var(--green2);
+
+  cursor: pointer;
+}
+
+:is(.trailer p, .play p) {
+  font: bold 1.5rem 'Poppins-regular';
+  text-transform: uppercase;
+  color: #fcfcfc;
+  transform: skew(24deg);
+
+}
+
+.play p {
+  color: var(--white);
+  margin-left: 5px;
+}
+
+.play:hover,
+.trailer:hover {
+  color: #000000;
+  border: 1px solid #628E75;
+  background-color: transparent;
+}
+
+
+
+
+@media (max-width: 500px) {
+  .trailer {
+    display: none;
+  }
+}
+@media (max-width: 980px) {
+  .anime-image img {
+    width: 50%;
+  }
+
+  .interact{
+    align-items: flex-start;
+  }
+}
+
+@media(min-width: 1020px) {
+  .logo img{
+    width: 15rem;
+    height: 8rem;
+  }
+  .container {
+    grid-template-areas:
+      "interact image";
+    align-items: center;
+  }
+  .anime-image {
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .name #title {
+    font-size:7rem;
+    line-height: 8rem;
+
+  }
+  .summary {
+    font-size: 2rem;
+  }
+  
+}
